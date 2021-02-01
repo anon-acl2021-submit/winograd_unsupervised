@@ -7,15 +7,26 @@ Also the code uses `nltk`, `torch`, `numpy`, and `sklearn` libraries, no version
 
 ### How can I run it?
 * Use the input file dataset.tsv provided.
-* To compute the MAS baseline, run 
-```python calculate_MAS_score_patched.py --model bert-base-multilingual-uncased --input_file dataset.tsv > results.mbert.MAS.txt
-python calculate_MAS_score_patched.py --model xlm-roberta-large --input_file dataset.tsv > results.xlmr.MAS.txt```
-* To compute several unsupervised baselines, run 
-```python calculate_baselines.py --model xlm-roberta-large --input_file dataset.tsv > results.xlmr.baselines.txt
-python calculate_baselines.py --model bert-base-multilingual-uncased --input_file dataset.tsv > results.mbert.baselines.txt```
-* To pre-calculate all the attention tensors, run
-```python dump_attns.py --model bert-base-multilingual-uncased --input_file dataset.tsv --output_file dump.mbert.attn.tsv
-python dump_attns.py --model xlm-roberta-large --input_file dataset.tsv --output_file dump.xlmr.attn.tsv```
-* Finally, to calculate scores of the proposed method, run
-```python calculate_scores_dump.py select.mbert.attn.tsv dump.mbert.scores.tsv
-python calculate_scores_dump.py select.xlmr.attn.tsv dump.xlmr.scores.tsv```
+* To compute the MAS baseline, run:
+```
+python calculate_MAS_score_patched.py --model bert-base-multilingual-uncased --input_file dataset.tsv > results.mbert.MAS.txt
+python calculate_MAS_score_patched.py --model xlm-roberta-large --input_file dataset.tsv > results.xlmr.MAS.txt
+```
+
+* To compute several unsupervised baselines, run:
+```
+python calculate_baselines.py --model xlm-roberta-large --input_file dataset.tsv > results.xlmr.baselines.txt
+python calculate_baselines.py --model bert-base-multilingual-uncased --input_file dataset.tsv > results.mbert.baselines.txt
+```
+
+* To pre-calculate all the attention tensors, run:
+```
+python dump_attns.py --model bert-base-multilingual-uncased --input_file dataset.tsv --output_file dump.mbert.attn.tsv
+python dump_attns.py --model xlm-roberta-large --input_file dataset.tsv --output_file dump.xlmr.attn.tsv
+```
+
+* Finally, to calculate scores of the proposed method, run:
+```
+python calculate_scores_dump.py select.mbert.attn.tsv dump.mbert.scores.tsv
+python calculate_scores_dump.py select.xlmr.attn.tsv dump.xlmr.scores.tsv
+```
